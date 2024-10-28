@@ -22,7 +22,7 @@ const DisplayBlog = () => {
             }
         }
         getBlogDetails();
-    }, [BlogId,details])
+    }, [BlogId, details])
 
     const updatefavourite = async (status, BlogId) => {
         try {
@@ -36,15 +36,19 @@ const DisplayBlog = () => {
     }
     return details && (
         <div className='flex h-[85vh] flex-col justify-between items-center'>
-            <div className='flex items-center justify-between p-3 sticky top-0 bg-gray-900 w-full'>
-                <h1 className='text-3xl p-2 font-serif font-bold border-b-2'>{details.title}</h1>
+            <div className='sticky top-0 flex items-center justify-between w-full p-3'>
+                <h1 className='p-2 font-serif text-3xl font-bold border-b-2'>{details.title}</h1>
                 <Star onClick={() => updatefavourite((!details.favourite ? true : false), BlogId)} className={`hover:text-yellow-500 hover:scale-105 transition-all hover:fill-yellow-500 ${details.favourite ? 'fill-yellow-500 text-yellow-500' : ''} cursor-pointer w-10 h-10`} />
+            </div>
+            <div>
+            <img src={`https://source.unsplash.com/1400x600/?${details.title}`}/>
             </div>
             <div className='h-[65vh] overflow-y-auto p-2'>
                 <p className='text-justify md:text-lg'>{details.description}</p>
             </div>
-            <div className='flex justify-end w-full'>
-                <span>Uploaded At : {details.createdAt.split("T")[0]}</span>
+            <div className='flex items-end justify-between w-full max-sm:flex-col'>
+            <span>Uploaded At : {details.createdAt.split("T")[0]}</span>
+            <span>{details.user.username}</span>
             </div>
         </div>
     )

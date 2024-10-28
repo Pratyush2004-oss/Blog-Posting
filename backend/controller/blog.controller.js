@@ -111,7 +111,9 @@ export const getBlogByID = async (req, res) => {
         const blogId = req.params.id;
 
         // find blog by blogId
-        const blog = await Blog.findOne({ _id: blogId });
+        const blog = await Blog.findOne({ _id: blogId }).populate({
+            path:"user"
+        });
         if (!blog) {
             return res.status(404).json({
                 message: "No blog found",

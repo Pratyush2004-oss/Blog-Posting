@@ -26,9 +26,9 @@ const AllBlogs = () => {
   }, [authUser, allBlogs])
   return (
     <div>
-      <div className='flex items-center justify-between p-3 sticky top-0 bg-gray-900'>
-        <h1 className='text-xl md:text-3xl p-2 font-serif font-bold border-b-2'>All Blogs</h1>
-        <button onClick={() => setOpenDialog(true)} className='btn btn-outline  transition-all duration-300'><PlusCircle /> Add Blog</button>
+      <div className='sticky top-0 flex items-center justify-between p-3'>
+        <h1 className='p-2 font-serif text-xl font-bold border-b-2 md:text-3xl'>All Blogs</h1>
+        <button onClick={() => setOpenDialog(true)} className='transition-all duration-300 btn btn-outline'><PlusCircle /> Add Blog</button>
       </div>
       <Cards Blogs={allBlogs} />
       <InputData setOpenDialog={setOpenDialog} openDialog={openDialog} />

@@ -23,8 +23,8 @@ const MyBlogs = () => {
     }, [authUser, allMyBlogs])
   return (
     <div>
-      <div className='flex items-center justify-between p-3 sticky top-0 bg-gray-900'>
-        <h1 className='text-3xl p-2 font-serif font-bold border-b-2'>My Blogs</h1>
+      <div className='sticky top-0 flex items-center justify-between p-3'>
+        <h1 className='p-2 font-serif text-3xl font-bold border-b-2'>My Blogs</h1>
       </div>
       <Cards Blogs={allMyBlogs} />
     </div>

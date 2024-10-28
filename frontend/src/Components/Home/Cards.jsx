@@ -34,13 +34,13 @@ const Cards = ({ Blogs }) => {
     }
 
     return Blogs && (
-        <div className='h-[75vh] overflow-y-auto'>
+        <div className='h-[75vh] overflow-y-auto border-t-4 border-black'>
             <div className={`${Blogs.length > 0 && 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'} p-4`}>
                 {Blogs.length > 0 ? Blogs.map((item, idx) => (
-                    <div key={idx} className='bg-gray-800 z-0 max-h-1/3 flex flex-col justify-between rounded-xl shadow-xl p-2'>
+                    <div key={idx} className='z-0 flex flex-col justify-between p-2 shadow-xl max-h-1/3 rounded-xl'>
                         <div className='my-2'>
                             <h1 className='text-lg font-bold'>{item.title}</h1>
-                            <p className='text-sm my-2 text-gray-500 text-justify line-clamp-3'>{item.description}</p>
+                            <p className='my-2 text-sm text-justify text-gray-500 line-clamp-3'>{item.description}</p>
                         </div>
                         <div className='flex items-center justify-between m-2'>
                             <button onClick={() => navigate(`/displayblog/${item._id}`)} className='btn btn-sm btn-info'>Read Blog</button>
@@ -48,13 +48,13 @@ const Cards = ({ Blogs }) => {
                                 <Star onClick={() => updatefavourite((!item.favourite ? true : false), item._id)} className={`hover:text-yellow-500 hover:scale-105 transition-all hover:fill-yellow-500 ${item.favourite ? 'fill-yellow-500 text-yellow-500' : ''} cursor-pointer`} />
                                 {
                                     item.user == authUser._id &&
-                                    <Trash2Icon onClick={() => deleteTask(item._id)} className=' hover:text-red-400  cursor-pointer' />
+                                    <Trash2Icon onClick={() => deleteTask(item._id)} className='cursor-pointer hover:text-red-400' />
                                 }
                             </div>
                         </div>
                     </div>
                 )) :
-                    <h1 className='text-red-400 text-xl font-mono text-center'>No Blogs listed</h1>
+                    <h1 className='font-mono text-xl text-center text-red-400'>No Blogs listed</h1>
                 }
             </div>
         </div>

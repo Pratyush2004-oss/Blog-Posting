@@ -38,32 +38,32 @@ const Signup = () => {
     }
   }
   return (
-    <div className='h-full flex items-center justify-center'>
-      <div className='p-4 md:w-1/2 rounded-lg bg-gray-800 shadow-xl'>
-        <h1 className='text-3xl border-b-2 p-2 text-center'>SignUp</h1>
+    <div className='flex items-center justify-center h-full'>
+      <div className='w-4/5 p-4 rounded-lg shadow-xl md:w-1/2'>
+        <h1 className='p-2 text-3xl text-center border-b-2'>SignUp</h1>
         <form className='my-3' onSubmit={handleSubmit}>
           {/* Username */}
-          <label className="form-control w-full">
+          <label className="w-full form-control">
             <div className="label">
               <span className="label-text">Username</span>
             </div>
-            <input value={input.username} name='username' onChange={changeEventHandler} type="text" placeholder="Username" className="input input-bordered w-full" />
+            <input value={input.username} name='username' onChange={changeEventHandler} type="text" placeholder="Username" className="w-full input input-bordered" />
           </label>
           {/* email */}
-          <label className="form-control w-full">
+          <label className="w-full form-control">
             <div className="label">
               <span className="label-text">Email</span>
             </div>
-            <input value={input.email} name='email' onChange={changeEventHandler} type="email" placeholder="xyz@example.com" className="input input-bordered w-full" />
+            <input value={input.email} name='email' onChange={changeEventHandler} type="email" placeholder="xyz@example.com" className="w-full input input-bordered" />
           </label>
           {/* password */}
-          <label className="form-control w-full">
+          <label className="w-full form-control">
             <div className="label">
               <span className="label-text">Password</span>
             </div>
-            <input value={input.password} name='password' onChange={changeEventHandler} type="password" placeholder="Password" className="input input-bordered w-full" />
+            <input value={input.password} name='password' onChange={changeEventHandler} type="password" placeholder="Password" className="w-full input input-bordered" />
           </label>
-          <button className='btn w-full mt-5 btn-success'>{loading ? <span className='loading loading-infinity'></span> : 'Signup'}</button>
+          <button className='w-full mt-5 btn btn-success'>{loading ? <span className='loading loading-infinity'></span> : 'Signup'}</button>
         </form>
         <span className='p-2'>Already have a account <Link to={'/login'} className='text-blue-500 '>Login</Link></span>
       </div>

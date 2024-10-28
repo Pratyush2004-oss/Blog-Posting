@@ -27,18 +27,18 @@ const Sidebar = () => {
     }
     return authUser && (
         <>
-            <div className=''>
+            <div className='fonbol'>
                 <h2 className='text-xl font-extrabold'>The Blog <span className='text-red-500'>Master</span></h2>
-                <h2 className='my-1 text-sm text-gray-300'>{authUser.username}</h2>
-                <h2 className='my-1 text-sm text-gray-300'>{authUser.email}</h2>
+                <h2 className='my-1 text-sm'>{authUser.username}</h2>
+                <h2 className='my-1 text-sm'>{authUser.email}</h2>
                 <hr />
             </div>
             <div>
                 {Data.map((item, idx) => (
-                    <Link to={item.link} className='m-2 flex gap-4 items-center rounded-md p-2 hover:bg-gray-600 transition-all duration-300' key={idx}> <item.icon /> {item.title}</Link>
+                    <Link to={item.link} className='flex items-center gap-4 p-2 m-2 transition-all duration-300 rounded-md hover:bg-gray-600' key={idx}> <item.icon /> {item.title}</Link>
                 ))}
             </div>
-            <div><button onClick={Logout} className='btn btn-outline gap-3 w-full'>Logout <LogOut /></button></div>
+            <div><button onClick={Logout} className='w-full gap-3 btn btn-outline'>Logout <LogOut /></button></div>
         </>
     )
 }
