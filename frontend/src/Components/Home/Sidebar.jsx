@@ -35,7 +35,7 @@ const Sidebar = () => {
             </div>
             <div>
                 {Data.map((item, idx) => (
-                    <Link to={item.link} className='flex items-center gap-4 p-2 m-2 transition-all duration-300 rounded-md hover:bg-gray-600' key={idx}> <item.icon /> {item.title}</Link>
+                    <Link to={item.link} className='flex items-center gap-4 p-2 m-2 transition-all duration-300 rounded-md hover:bg-gray-200' key={idx}> <item.icon /> {item.title}</Link>
                 ))}
             </div>
             <div><button onClick={Logout} className='w-full gap-3 btn btn-outline'>Logout <LogOut /></button></div>
