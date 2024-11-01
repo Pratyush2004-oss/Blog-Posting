@@ -36,6 +36,7 @@ const MiniSideBar = () => {
             <div className="z-20 drawer-side">
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                 <div className="min-h-full p-4 menu bg-base-200 text-base-content w-80">
+                
                     {/* Sidebar content here */}
                     <div className='h-[90vh] p-3 flex flex-col justify-between'>
                         <div className='font-bold'>
