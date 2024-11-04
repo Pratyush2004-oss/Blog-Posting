@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heart, Star, Trash2Icon } from 'lucide-react'
+import { Star, Trash2Icon } from 'lucide-react'
 import axios from 'axios'
 import { BLOG_API_END_POINT } from '../../assets/Apis'
 import toast from 'react-hot-toast'

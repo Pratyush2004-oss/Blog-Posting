@@ -47,23 +47,23 @@ const InputData = ({ openDialog, setOpenDialog }) => {
             {/* Open the modal using document.getElementById('ID').showModal() method */}
             <dialog className="modal" open={openDialog}>
                 <div className="modal-box">
-                    <h3 className="font-bold text-lg">Add Blog</h3>
+                    <h3 className="text-lg font-bold">Add Blog</h3>
                     <hr />
                     <form onSubmit={handleSubmit} className='flex flex-col gap-3 my-5'>
-                        <label className="form-control w-full">
+                        <label className="w-full form-control">
                             <div className="label">
-                                <span className="label-text text-lg font-bold">Title</span>
+                                <span className="text-lg font-bold label-text">Title</span>
                             </div>
-                            <input value={input.title} name='title' onChange={changeEventHandler} type="text" placeholder="Enter Title" className="input input-bordered w-full" />
+                            <input value={input.title} name='title' onChange={changeEventHandler} type="text" placeholder="Enter Title" className="w-full input input-bordered" />
                         </label>
-                        <label className="form-control w-full">
+                        <label className="w-full form-control">
                             <div className="label">
-                                <span className="label-text text-lg font-bold">Description</span>
+                                <span className="text-lg font-bold label-text">Description</span>
                             </div>
                             <textarea value={input.description} name='description' onChange={changeEventHandler} className="textarea h-52 textarea-bordered" placeholder="Enter Description"></textarea>                        </label>
-                        <div className='flex justify-end mt-5 items-center gap-4'>
-                            <button type='button' onClick={() => setOpenDialog(false)} className="btn btn-error btn-sm rounded-full">Close</button>
-                            <button className="btn btn-success btn-sm rounded-full" type='submit'>{loading ? <spqn className='loading loading-dots'></spqn> : 'Submit'}</button>
+                        <div className='flex items-center justify-end gap-4 mt-5'>
+                            <button type='button' onClick={() => setOpenDialog(false)} className="rounded-full btn btn-error btn-sm">Close</button>
+                            <button className="rounded-full btn btn-success btn-sm" type='submit'>{loading ? <span className='loading loading-dots'></span> : 'Submit'}</button>
                         </div>
                     </form>
                 </div>
