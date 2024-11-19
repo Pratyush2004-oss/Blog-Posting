@@ -12,7 +12,7 @@ import AllBlogs from "./Pages/AllBlogs";
 function App() {
   const { authUser } = useAuthcontext();
   return (
-    <div className="h-screen p-4 ">
+    <div className="h-screen p-4">
       <Router>
         <Routes>
           <Route exact path='/' element={authUser ? <Home /> : <Navigate to={'/login'} />}>
